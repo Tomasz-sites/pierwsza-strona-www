@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brief — Pierwsza Strona</title>
+<meta name="description" content="Wypełnij krótki brief, żebyśmy mogli zacząć pracę nad Twoją stroną internetową.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --c-ink:#12213B;
+    --c-ink-soft:#1C2E4D;
+    --c-paper:#F3F2ED;
+    --c-paper-dim:#E9E7DD;
+    --c-brass:#C9A227;
+    --c-brass-light:#E4C25A;
+    --c-brick:#B3452F;
+    --c-charcoal:#20222A;
+    --c-line: rgba(18,33,59,0.12);
+    --c-line-dark: rgba(243,242,237,0.16);
+    --font-display: 'Big Shoulders Display', sans-serif;
+    --font-body: 'Work Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --radius-s: 6px;
+    --radius-m: 14px;
+    --maxw: 760px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:var(--font-body); color:var(--c-charcoal);
+    background:var(--c-paper); -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  h1,h2{font-family:var(--font-display); font-weight:700; line-height:1; margin:0;}
+  p{margin:0; line-height:1.6;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+
+  header{background:var(--c-ink); padding:22px 0;}
+  .logo{
+    font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--c-paper);
+    text-decoration:none; display:flex; align-items:baseline; gap:6px;
+  }
+  .logo sup{font-family:var(--font-mono); font-size:10px; color:var(--c-brass); font-weight:500;}
+
+  .intro{padding:56px 0 32px;}
+  .eyebrow{
+    font-family:var(--font-mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--c-brick); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::before{content:""; width:22px; height:2px; background:var(--c-brick); display:inline-block;}
+  .intro h1{font-size:clamp(28px,4.5vw,40px); color:var(--c-ink);}
+  .intro p{margin-top:16px; font-size:16px; color:#454A54; max-width:560px;}
+
+  form{padding:12px 0 80px; display:flex; flex-direction:column; gap:28px;}
+  .group{
+    background:#fff; border:1px solid var(--c-line); border-radius:var(--radius-m);
+    padding:28px 26px; display:flex; flex-direction:column; gap:20px;
+  }
+  .group h2{font-size:19px; color:var(--c-ink);}
+  .group .hint{font-size:13.5px; color:#7A7E86; margin-top:-12px;}
+  .field label{
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.05em; text-transform:uppercase;
+    color:#5B5F67; display:block; margin-bottom:8px;
+  }
+  .field .req{color:var(--c-brick);}
+  .field input, .field textarea, .field select{
+    width:100%; background:var(--c-paper); border:1px solid var(--c-line); border-radius:var(--radius-s);
+    padding:12px 14px; color:var(--c-charcoal); font-family:var(--font-body); font-size:14.5px;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{
+    outline:2px solid var(--c-brass); outline-offset:1px; border-color:var(--c-brass);
+  }
+  .field textarea{resize:vertical; min-height:90px;}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+
+  .submit-btn{
+    font-family:var(--font-mono); font-size:15px; letter-spacing:0.03em; text-decoration:none;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 28px; border-radius:999px; border:none; cursor:pointer;
+    background:var(--c-brick); color:#fff; transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .submit-btn:hover{transform:translateY(-2px); background:#96392A;}
+  .submit-btn:disabled{opacity:0.6; cursor:default; transform:none;}
+  #formStatus{font-family:var(--font-mono); font-size:13px; margin-top:2px;}
+
+  @media (max-width:640px){
+    .row2{grid-template-columns:1fr;}
+    .group{padding:22px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="logo">Pierwsza Strona<sup>01</sup></a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <p class="eyebrow">Brief projektowy</p>
+    <h1>Opowiedz nam o swojej firmie</h1>
+    <p>Im więcej konkretów, tym szybciej i trafniej zaprojektujemy Twoją stronę. Wypełnienie zajmuje około 10 minut — nie musisz znać się na technologii, wystarczy że dobrze znasz swoją firmę.</p>
+  </div>
+
+  <form id="briefForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="8115fa25-df1b-4ec0-8fb4-290603a6a588">
+    <input type="hidden" name="subject" value="Nowy brief klienta — Pierwsza Strona">
+    <input type="hidden" name="from_name" value="Formularz briefu — Pierwsza Strona">
+
+    <div class="group">
+      <h2>Podstawowe informacje</h2>
+      <div class="field">
+        <label for="nazwa">Nazwa firmy <span class="req">*</span></label>
+        <input type="text" id="nazwa" name="nazwa_firmy" required>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="branza">Branża / czym się zajmujecie <span class="req">*</span></label>
+          <input type="text" id="branza" name="branza" placeholder="np. salon fryzjerski, warsztat samochodowy" required>
+        </div>
+        <div class="field">
+          <label for="miasto">Miasto / obszar działania <span class="req">*</span></label>
+          <input type="text" id="miasto" name="miasto" required>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="telefon">Telefon kontaktowy (widoczny na stronie) <span class="req">*</span></label>
+          <input type="tel" id="telefon" name="telefon" required>
+        </div>
+        <div class="field">
+          <label for="email">Email kontaktowy <span class="req">*</span></label>
+          <input type="email" id="email" name="email_firmy" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="godziny">Godziny otwarcia</label>
+        <input type="text" id="godziny" name="godziny_otwarcia" placeholder="np. pn-pt 9-18, sob 9-14">
+      </div>
+      <div class="field">
+        <label for="adres">Dokładny adres (do mapy dojazdu)</label>
+        <input type="text" id="adres" name="adres" placeholder="ulica, numer, kod pocztowy">
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Usługi i oferta</h2>
+      <div class="field">
+        <label for="uslugi">Lista głównych usług / produktów <span class="req">*</span></label>
+        <p class="hint">Wypisz je po przecinku lub w osobnych liniach — to będzie baza pod treść strony.</p>
+        <textarea id="uslugi" name="lista_uslug" required placeholder="np. strzyżenie damskie, koloryzacja, stylizacja ślubna..."></textarea>
+      </div>
+      <div class="field">
+        <label for="wyroznik">Co Was wyróżnia na tle konkurencji?</label>
+        <textarea id="wyroznik" name="wyroznik" placeholder="np. 10 lat doświadczenia, naturalne kosmetyki, szybka realizacja..."></textarea>
+      </div>
+      <div class="field">
+        <label for="grupa">Kim są Wasi klienci?</label>
+        <input type="text" id="grupa" name="grupa_docelowa" placeholder="np. kobiety 25-45 lat z okolicy, rodziny z dziećmi...">
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Materiały i inspiracje</h2>
+      <p class="hint">Formularz nie przyjmuje załączników — wklej linki do zdjęć/social media, a resztą zajmiemy się sami.</p>
+      <div class="field">
+        <label for="social">Linki do Instagrama / Facebooka / profilu Google</label>
+        <textarea id="social" name="linki_social" placeholder="np. instagram.com/twojafirma, facebook.com/twojafirma"></textarea>
+      </div>
+      <div class="field">
+        <label for="zdjecia">Linki do zdjęć, które można wykorzystać (Dysk Google, Instagram, itp.)</label>
+        <textarea id="zdjecia" name="linki_zdjecia"></textarea>
+      </div>
+      <div class="field">
+        <label for="logo">Czy macie już logo?</label>
+        <select id="logo" name="czy_logo">
+          <option value="Tak, wyślę osobno">Tak, wyślę osobno</option>
+          <option value="Nie, potrzebuję pomocy">Nie, potrzebuję pomocy</option>
+          <option value="Nie, wystarczy sama nazwa">Nie, wystarczy sama nazwa (bez logo)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="inspiracje">Strony, które Wam się podobają (jeśli jakieś znacie)</label>
+        <input type="text" id="inspiracje" name="inspiracje" placeholder="linki albo nazwy firm, których strona Ci się podoba">
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Styl i dodatkowe uwagi</h2>
+      <div class="field">
+        <label for="styl">Jaki styl/nastrój ma mieć strona?</label>
+        <select id="styl" name="styl_wizualny">
+          <option value="Nowoczesny i minimalistyczny">Nowoczesny i minimalistyczny</option>
+          <option value="Ciepły i przytulny">Ciepły i przytulny</option>
+          <option value="Elegancki / premium">Elegancki / premium</option>
+          <option value="Energiczny i kolorowy">Energiczny i kolorowy</option>
+          <option value="Nie wiem, zaproponujcie">Nie wiem, zaproponujcie</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="uwagi">Coś jeszcze, co powinniśmy wiedzieć?</label>
+        <textarea id="uwagi" name="dodatkowe_uwagi"></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Wyślij brief</button>
+    <p id="formStatus"></p>
+  </form>
+</div>
+
+<script>
+  const briefForm = document.getElementById('briefForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+  briefForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wysyłanie…';
+    formStatus.textContent = '';
+    try{
+      const res = await fetch(briefForm.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(briefForm)))
+      });
+      const data = await res.json();
+      if(data.success){
+        formStatus.style.color = '#2E7D4F';
+        formStatus.textContent = 'Dziękujemy! Brief został wysłany — wracamy do Ciebie z projektem w ciągu kilku dni.';
+        briefForm.reset();
+        briefForm.style.display = 'none';
+      } else {
+        throw new Error(data.message || 'Błąd wysyłki');
+      }
+    } catch(err){
+      formStatus.style.color = '#B3452F';
+      formStatus.textContent = 'Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na tomek.bobak@icloud.com.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Wyślij brief';
+    }
+  });
+</script>
+
+</body>
+</html>
